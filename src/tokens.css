@@ -1,0 +1,101 @@
+/* tokens.css
+   Sistema de diseño de la app — variables centrales de color y tipografía.
+   Importa esto una sola vez en tu index.css o main.jsx.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+:root {
+  /* --- CajaÁgil: paleta de marca --- */
+  --color-navy: #0f172a;       /* Azul profundo — barra superior, sidebar, títulos */
+  --color-navy-dark: #0b1120;  /* Variante más oscura, para hover/estados activos */
+  --color-navy-light: #334155; /* Variante intermedia, para texto secundario sobre navy */
+
+  --color-teal: #38bdf8;       /* Azul cielo — color principal: botones, enlaces, marca */
+  --color-teal-dark: #0ea5e9;  /* Azul cielo oscuro — hover de botones/enlaces */
+
+  /* --- Neutros --- */
+  --color-paper: #f1f5f9;      /* Gris claro — fondo general de la app */
+  --color-paper-alt: #e0f2fe;  /* Azul muy claro — fondos y tarjetas seleccionadas */
+  --color-ink: #1e293b;        /* Texto principal — más suave que navy, mejor lectura en párrafos */
+  --color-ink-suave: #64748b;  /* Texto secundario/atenuado */
+  --color-border: #e2e8f0;     /* Bordes sutiles */
+
+  /* --- Estados de stock (definidos por el negocio, sin cambios) --- */
+  --color-stock-verde: #2e7d4f;
+  --color-stock-verde-bg: #e7f4ec;
+  --color-stock-amarillo: #c98a1a;
+  --color-stock-amarillo-bg: #faf1de;
+  --color-stock-rojo: #c4432e;
+  --color-stock-rojo-bg: #fbeae6;
+
+  /* --- Semánticos --- */
+  --color-exito: #2e7d4f;
+  --color-peligro: #c4432e;
+  --color-advertencia: #c98a1a;
+
+  /* --- Tipografía --- */
+  --fuente-display: 'Space Grotesk', sans-serif;
+  --fuente-texto: 'Inter', sans-serif;
+  --fuente-numeros: 'IBM Plex Mono', monospace;
+
+  /* --- Espaciado --- */
+  --espacio-xs: 0.25rem;
+  --espacio-sm: 0.5rem;
+  --espacio-md: 1rem;
+  --espacio-lg: 1.5rem;
+  --espacio-xl: 2rem;
+
+  /* --- Bordes --- */
+  --radio-sm: 6px;
+  --radio-md: 10px;
+
+  /* --- Altura de la barra de navegación inferior (móvil) --- */
+  --altura-nav-inferior: 64px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--fuente-texto);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Cualquier cifra de dinero o cantidad usa números tabulares para que
+   alineen perfectamente en tablas y listas, como en un tiquete real. */
+.numero,
+.dinero {
+  font-family: var(--fuente-numeros);
+  font-variant-numeric: tabular-nums;
+}
+
+button {
+  font-family: var(--fuente-texto);
+  cursor: pointer;
+}
+
+/* Foco visible siempre, para navegación con teclado */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

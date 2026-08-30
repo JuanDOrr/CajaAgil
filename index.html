@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/icons/icon-192.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Color de la barra de estado en móvil cuando la app está instalada -->
+    <meta name="theme-color" content="#0f172a" />
+
+    <title>CajaÁgil</title>
+
+    <!-- Google Identity Services: necesario para el login OAuth de
+         googleAuth.js. Se carga una sola vez aquí, no con npm. -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
